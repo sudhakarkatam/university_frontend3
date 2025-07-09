@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE = 'https://university-backend-production-750d.up.railway.app/api/auth'; // ✅ Correct
+const API_BASE = 'http://localhost:8080/api/auth'; // Adjust if backend port changes
 
 // Register new user
 export const registerUser = async (userData) => {
