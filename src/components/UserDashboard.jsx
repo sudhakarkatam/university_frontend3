@@ -11,13 +11,7 @@ const UserDashboard = () => {
 
   return (
     <div className="dashboard">
-      <h1>👋 Welcome to Your Dashboard</h1>
-      <p>You are logged in successfully.</p>
-
-      <div className="dashboard-actions">
-        <button onClick={() => navigate('/')}>🏠 Go to Home</button>
-        <button onClick={handleLogout}>🚪 Logout</button>
-      </div>
+      {/* Removed welcome and action buttons as requested */}
     </div>
   );
 };

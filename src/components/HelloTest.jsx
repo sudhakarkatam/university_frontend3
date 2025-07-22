@@ -12,7 +12,6 @@ function HelloTest() {
 
   return (
     <div>
-      <h2>Backend Hello Test</h2>
       <p>{message}</p>
     </div>
   );

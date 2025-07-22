@@ -55,7 +55,7 @@ const Footer = () => {
           <div className="footer-info">
             <div className="footer-logo-wrap">
               <GraduationCap className="footer-logo-icon" />
-              <span className="footer-logo-text">Excellence University</span>
+              <span className="footer-logo-text">Mahindra University</span>
             </div>
             <p className="footer-desc">
               Empowering minds, inspiring innovation, and shaping the leaders of tomorrow. 
@@ -64,15 +64,15 @@ const Footer = () => {
             <div className="footer-contact-list">
               <div className="footer-contact-item">
                 <MapPin className="footer-contact-icon" />
-                <span>123 University Avenue, Excellence City, EC 12345</span>
+                <span>Survey No: 62/1A, Bahadurpally, Jeedimetla, Hyderabad, Telangana 500043</span>
               </div>
               <div className="footer-contact-item">
                 <Phone className="footer-contact-icon" />
-                <span>+1 (555) 123-4567</span>
+                <span>040 67135100, +919618592999, +919100938473</span>
               </div>
               <div className="footer-contact-item">
                 <Mail className="footer-contact-icon" />
-                <span>info@excellenceuniversity.edu</span>
+                <span>admissions@mahindrauniversity.edu.in</span>
               </div>
             </div>
           </div>
@@ -139,7 +139,7 @@ const Footer = () => {
           <div className="footer-newsletter-content">
             <h3 className="footer-newsletter-title">Stay Connected</h3>
             <p className="footer-newsletter-desc">
-              Subscribe to our newsletter for the latest news, events, and updates from Excellence University.
+              Subscribe to our newsletter for the latest news, events, and updates from Mahindra University.
             </p>
           </div>
           <div className="footer-newsletter-form">
@@ -187,7 +187,7 @@ const Footer = () => {
       <div className="footer-bottom">
         <div className="footer-bottom-content">
           <div>
-            © 2024 Excellence University. All rights reserved.
+            © 2024 Mahindra University. All rights reserved.
           </div>
           <div className="footer-bottom-equal">
             An equal opportunity/affirmative action institution.

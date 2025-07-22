@@ -4,7 +4,6 @@ import { loginUser } from '../api/auth';
 import { GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from 'jwt-decode';
 
-
 function LoginForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -12,16 +11,19 @@ function LoginForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       const response = await loginUser(email, password);
-      console.log('Login success:', response.data);
-
-      // Save token if your backend returns one
-      // localStorage.setItem('token', response.data.token);
-
+      const { token, role, name } = response.data;
+      localStorage.setItem('token', token);
+      localStorage.setItem('role', role);
+      localStorage.setItem('name', name);
       alert('✅ Login successful!');
-      navigate('/dashboard');
+      // Redirect based on role
+      if (role === 'ADMIN') navigate('/admin/dashboard');
+      else if (role === 'HOD') navigate('/hod/dashboard');
+      else if (role === 'FACULTY') navigate('/faculty/dashboard');
+      else if (role === 'STUDENT') navigate('/student/dashboard');
+      else navigate('/dashboard');
     } catch (error) {
       console.error('Login error:', error.response?.data || error.message);
       alert('❌ Login failed. Check email and password.');
@@ -31,11 +33,7 @@ function LoginForm() {
   const handleGoogleSuccess = (credentialResponse) => {
     const decoded = jwtDecode(credentialResponse.credential);
     console.log('Google login success:', decoded);
-
     // Optional: Send this credential to your backend for token exchange
-    // Example:
-    // axios.post('/api/auth/google', { credential: credentialResponse.credential });
-
     alert(`✅ Welcome, ${decoded.name || decoded.email}`);
     navigate('/dashboard');
   };
@@ -67,7 +65,6 @@ function LoginForm() {
         />
         <button type="submit">Login</button>
       </form>
-
       <div style={{ marginTop: '20px' }}>
         <GoogleLogin
           onSuccess={handleGoogleSuccess}

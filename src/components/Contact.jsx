@@ -6,17 +6,17 @@ const Contact = () => {
     {
       icon: Phone,
       title: 'Phone',
-      details: ['+1 (555) 123-4567', '+1 (555) 123-4568']
+      details: ['040 67135100', '+919618592999', '+919100938473']
     },
     {
       icon: Mail,
       title: 'Email',
-      details: ['info@excellenceuniversity.edu', 'admissions@excellenceuniversity.edu']
+      details: ['admissions@mahindrauniversity.edu.in']
     },
     {
       icon: MapPin,
       title: 'Address',
-      details: ['123 University Avenue', 'Excellence City, EC 12345']
+      details: ['Survey No: 62/1A, Bahadurpally, Jeedimetla, Hyderabad, Telangana 500043']
     },
     {
       icon: Clock,
@@ -27,28 +27,40 @@ const Contact = () => {
 
   const departments = [
     {
-      name: 'Admissions Office',
-      phone: '+1 (555) 123-4570',
-      email: 'admissions@excellenceuniversity.edu',
-      hours: 'Mon-Fri: 8:00 AM - 5:00 PM'
+      name: 'School of Law',
+      phone: '+917306799802',
+      email: '',
+      hours: ''
     },
     {
-      name: 'Student Services',
-      phone: '+1 (555) 123-4571',
-      email: 'students@excellenceuniversity.edu',
-      hours: 'Mon-Fri: 8:00 AM - 6:00 PM'
+      name: 'B.Tech Admissions (South & West)',
+      phone: '+919618592999, +919100938473',
+      email: '',
+      hours: ''
     },
     {
-      name: 'Financial Aid',
-      phone: '+1 (555) 123-4572',
-      email: 'financialaid@excellenceuniversity.edu',
-      hours: 'Mon-Fri: 9:00 AM - 5:00 PM'
+      name: 'BBA/ B.A Admissions (South & West)',
+      phone: '919553433789',
+      email: '',
+      hours: ''
     },
     {
-      name: 'International Office',
-      phone: '+1 (555) 123-4573',
-      email: 'international@excellenceuniversity.edu',
-      hours: 'Mon-Fri: 8:30 AM - 5:30 PM'
+      name: 'BBA/ B.A Admissions (North & East)',
+      phone: '+917318551441, +919811346373',
+      email: '',
+      hours: ''
+    },
+    {
+      name: 'Executive Education',
+      phone: '9059538001',
+      email: 'executive.education@mahindrauniversity.edu.in',
+      hours: ''
+    },
+    {
+      name: 'MBA',
+      phone: '9963427036 / 9963476964',
+      email: 'mba.admissions@mahindrauniversity.edu.in',
+      hours: ''
     }
   ];
 

@@ -14,11 +14,10 @@ const About = () => {
       <div className="about-container">
         <div className="about-header">
           <h2 className="about-title">
-            About Excellence University
+            About Mahindra University
           </h2>
           <p className="about-desc">
-            For over 150 years, we have been at the forefront of education, research, and innovation, 
-            shaping leaders who make a difference in the world.
+            Mahindra University is at the forefront of education, research, and innovation, shaping leaders who make a difference in the world.
           </p>
         </div>
 

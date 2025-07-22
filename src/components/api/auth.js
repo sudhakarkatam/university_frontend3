@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE = 'http://localhost:8080/api/auth'; // Adjust if backend port changes
+const API_BASE = 'http://localhost:8080/api/auth'; // Use local backend for development
 
 // Register new user
 export const registerUser = async (userData) => {

@@ -1,143 +1,65 @@
 import React from 'react';
-import { Calendar, Clock, ArrowRight } from 'lucide-react';
+
+const announcements = [
+  'Department of Physiotherapy Organising "Emerging Scholar\'s Symposium on Knee Osteoarthritis" Tuesday, 28th Jan 2025.',
+  'Second National Conference on Viksit Bharat @2047 January 25, 2025.',
+  'Department of Physiotherapy Organising a one day workshop on "Measuring Health and Disability with ICF Model"',
+];
+
+function AnnouncementsCard() {
+  return (
+    <div style={{
+      background: '#fff',
+      borderRadius: 16,
+      boxShadow: '0 2px 12px rgba(0,0,0,0.10)',
+      border: '4px solid #ff9800',
+      maxWidth: 400,
+      margin: '2rem auto',
+      padding: 0,
+      overflow: 'hidden'
+    }}>
+      <div style={{
+        background: '#ff9800',
+        color: '#fff',
+        fontWeight: 700,
+        fontSize: '1.25rem',
+        textAlign: 'center',
+        padding: '1rem 0'
+      }}>
+        Announcements
+      </div>
+      <div style={{ padding: '1.25rem 1rem' }}>
+        {announcements.map((text, idx) => (
+          <div key={idx} style={{ marginBottom: idx < announcements.length - 1 ? 16 : 0 }}>
+            <div style={{ color: '#22223b', fontSize: '1.05rem', textAlign: 'center' }}>{text}</div>
+            {idx < announcements.length - 1 && (
+              <hr style={{ border: 'none', borderTop: '1px solid #ff9800', margin: '1rem 0' }} />
+            )}
+          </div>
+        ))}
+      </div>
+      <button style={{
+        width: '100%',
+        background: '#ffd600',
+        color: '#22223b',
+        fontWeight: 700,
+        fontSize: '1.1rem',
+        border: 'none',
+        borderRadius: 0,
+        padding: '1rem 0',
+        cursor: 'pointer'
+      }}>
+        View All
+      </button>
+    </div>
+  );
+}
 
 const News = () => {
-  const newsItems = [
-    // ... existing code ...
-  ];
-
-  const upcomingEvents = [
-    // ... existing code ...
-  ];
-
-  const getCategoryColor = (category) => {
-    const colors = {
-      Research: 'cat-research',
-      Campus: 'cat-campus',
-      Rankings: 'cat-rank',
-      International: 'cat-intl',
-      Alumni: 'cat-alumni',
-      Medicine: 'cat-medicine'
-    };
-    return colors[category] || 'cat-default';
-  };
-
-  const formatDate = (dateString) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  };
-
   return (
     <section id="news" className="news-section">
       <div className="news-container">
-        <div className="news-header">
-          <h2 className="news-title">
-            News & Events
-          </h2>
-          <p className="news-desc">
-            Stay updated with the latest developments, achievements, and upcoming events 
-            from our university community.
-          </p>
-        </div>
-
-        <div className="news-grid">
-          {/* Main News Section */}
-          <div className="news-main">
-            <div className="news-main-header">
-              <h3 className="news-main-title">Latest News</h3>
-              <button className="news-main-btn">
-                View All News →
-              </button>
-            </div>
-            
-            <div className="news-list">
-              {newsItems.map((item, index) => (
-                <article key={index} className="news-card">
-                  <div className="news-card-flex">
-                    <div className="news-card-img-wrap">
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="news-card-img"
-                      />
-                    </div>
-                    <div className="news-card-content">
-                      <div className="news-card-meta">
-                        <span className={`news-cat ${getCategoryColor(item.category)}`}>
-                          {item.category}
-                        </span>
-                        <div className="news-date">
-                          <Calendar className="icon-date" />
-                          {formatDate(item.date)}
-                        </div>
-                        <div className="news-time">
-                          <Clock className="icon-time" />
-                          {item.readTime}
-                        </div>
-                      </div>
-                      <h4 className="news-card-title">
-                        {item.title}
-                      </h4>
-                      <p className="news-card-desc">{item.excerpt}</p>
-                      <button className="news-card-btn">
-                        Read More
-                        <ArrowRight className="icon-arrow" />
-                      </button>
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-
-          {/* Sidebar */}
-          <div className="news-sidebar">
-            {/* Upcoming Events */}
-            <div className="news-events">
-              <h3 className="news-events-title">Upcoming Events</h3>
-              <div className="news-events-list">
-                {upcomingEvents.map((event, index) => (
-                  <div key={index} className="news-event-item">
-                    <h4 className="news-event-title">{event.title}</h4>
-                    <div className="news-event-details">
-                      <div className="news-event-date">
-                        <Calendar className="icon-date" />
-                        {formatDate(event.date)}
-                      </div>
-                      <div className="news-event-time">
-                        <Clock className="icon-time" />
-                        {event.time}
-                      </div>
-                      <div>{event.location}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <button className="news-events-btn">
-                View All Events
-              </button>
-            </div>
-
-            {/* Newsletter Signup */}
-            <div className="news-newsletter">
-              <h3 className="news-newsletter-title">Stay Informed</h3>
-              <p className="news-newsletter-desc">Subscribe to our newsletter for the latest updates and announcements.</p>
-              <div className="news-newsletter-form">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="news-newsletter-input"
-                />
-                <button className="news-newsletter-btn">
-                  Subscribe
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <AnnouncementsCard />
       </div>
     </section>
   );
