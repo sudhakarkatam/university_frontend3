@@ -62,8 +62,8 @@ const Navbar = () => {
               {dashboardLinks}
             </ul>
             <div className="navbar-modern-auth-buttons ml-6">
-              {!isLoggedIn && <a href="/login" className="navbar-modern-btn signin">Sign In</a>}
-              {!isLoggedIn && <a href="/register" className="navbar-modern-btn register">Register</a>}
+              {/* {!isLoggedIn && <a href="/login" className="navbar-modern-btn signin">Sign In</a>} */}
+              {/* {!isLoggedIn && <a href="/register" className="navbar-modern-btn register">Register</a>} */}
             </div>
           </div>
           {/* Right: CTA Button */}
@@ -97,8 +97,8 @@ const Navbar = () => {
               ))}
               {dashboardLinks}
               <div className="navbar-modern-mobile-auth-buttons">
-                {!isLoggedIn && <a href="/login" className="navbar-modern-btn signin">Sign In</a>}
-                {!isLoggedIn && <a href="/register" className="navbar-modern-btn register">Register</a>}
+                {/* {!isLoggedIn && <a href="/login" className="navbar-modern-btn signin">Sign In</a>} */}
+                {/* {!isLoggedIn && <a href="/register" className="navbar-modern-btn register">Register</a>} */}
               </div>
               <Link to="/admissions" className="navbar-modern-apply-btn mt-4">APPLY NOW</Link>
             </div>
