@@ -24,53 +24,71 @@ const CampusLife = () => {
         </div>
 
         {/* Virtual Campus Tour */}
-        <div style={{ margin: '2.5rem 0', background: '#fff', borderRadius: '1.25rem', boxShadow: '0 2px 12px rgba(0,0,0,0.06)', padding: '2rem 1.5rem' }}>
-          <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#1d4ed8', marginBottom: 16 }}>Virtual Campus Tour</h3>
+        <div className="campus-section-block">
+          <h3 className="campus-section-title">Virtual Campus Tour</h3>
           <iframe
-            src="https://www.mahindrauniversity.edu.in/sites/virtual-tour-of-mu-campus.html"
-            title="Mahindra University Virtual Tour"
+            src="http://zeal360.co.in/360/mallareddyuniversity2/mallareddyuniversity.html"
+            title="mallarreddy university Virtual Tour"
             width="100%"
             height="480"
-            style={{ border: 'none', borderRadius: '1rem' }}
+            className="campus-tour-iframe"
             allowFullScreen
           ></iframe>
-          <div style={{ textAlign: 'center', marginTop: 16 }}>
+          <div className="campus-tour-btn-wrap">
             <a
-              href="https://www.mahindrauniversity.edu.in/sites/virtual-tour-of-mu-campus.html"
+              href="http://zeal360.co.in/360/mallareddyuniversity2/mallareddyuniversity.html"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ background: '#d4af37', color: '#fff', border: 'none', borderRadius: 8, padding: '0.75rem 2rem', fontWeight: 700, fontSize: '1.1rem', textDecoration: 'none', display: 'inline-block', marginTop: 8 }}
+              className="campus-gallery-btn"
             >
               Open Fullscreen Virtual Tour
             </a>
           </div>
         </div>
 
-        {/* Visit Campus */}
-        <div style={{ margin: '2.5rem 0', background: '#fff', borderRadius: '1.25rem', boxShadow: '0 2px 12px rgba(0,0,0,0.06)', padding: '2rem 1.5rem' }}>
-          <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#1d4ed8', marginBottom: 16 }}>Visit Our Campus</h3>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.282393698736!2d78.3654236!3d17.5688021!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb8f06a86f0315%3A0x2f80d6e75d32cc14!2sMahindra%20University!5e0!3m2!1sen!2sin!4v1689940000000!5m2!1sen!2sin"
-            width="100%"
-            height="350"
-            style={{ border: 'none', borderRadius: '1rem' }}
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Mahindra University Location"
-          ></iframe>
-          <div style={{ textAlign: 'center', marginTop: 16 }}>
-            <a
-              href="https://www.google.com/maps/place/Mahindra+University/@17.5688021,78.3654236,13z/data=!4m6!3m5!1s0x3bcb8f06a86f0315:0x2f80d6e75d32cc14!8m2!3d17.5685526!4d78.4357555!16s%2Fg%2F11llx155lq?entry=ttu"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ background: '#1d4ed8', color: '#fff', border: 'none', borderRadius: 8, padding: '0.75rem 2rem', fontWeight: 700, fontSize: '1.1rem', textDecoration: 'none', display: 'inline-block', marginTop: 8 }}
-            >
-              Open in Google Maps
-            </a>
+        {/* Student Testimonials */}
+        <div className="campus-section-block">
+          <h3 className="campus-section-title">STUDENT TESTIMONIALS</h3>
+          <div className="campus-videos-row">
+            <iframe width="360" height="215" src="https://www.youtube.com/embed/RIGC_gfX4Uo?si=jv70ZRnTQtNSgMrV" title="Student Testimonial 1" frameBorder="0" allowFullScreen></iframe>
+            <iframe width="360" height="215" src="https://www.youtube.com/embed/R4-27suScdY?si=e-pq12yQt2jBw2sf" title="Student Testimonial 2" frameBorder="0" allowFullScreen></iframe>
+            <iframe width="360" height="215" src="https://www.youtube.com/embed/0hB1NsHsWso?si=kVM3xGlPj69FRiN2" title="Student Testimonial 3" frameBorder="0" allowFullScreen></iframe>
           </div>
         </div>
 
+        {/* Video Gallery */}
+        <div className="campus-section-block">
+          <h3 className="campus-section-title">VIDEO GALLERY</h3>
+          <div className="campus-videos-row">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/jVKlDt4bSsk?si=ZIBVd45ahytbaUcB" title="Video Gallery" frameBorder="0" allowFullScreen></iframe>
+          </div>
+          <div style={{ textAlign: 'center', marginTop: 16 }}>
+            <button className="campus-gallery-btn">Video Gallery</button>
+          </div>
+        </div>
+
+        {/* Media */}
+        <div className="campus-section-block">
+          <h3 className="campus-section-title">MEDIA</h3>
+          <div className="campus-videos-row">
+            <iframe width="360" height="215" src="https://www.youtube.com/embed/yqNVU2uLdHc?si=ZaGBAXxslCs0tpHV" title="Media 1" frameBorder="0" allowFullScreen></iframe>
+            <iframe width="360" height="215" src="https://www.youtube.com/embed/7FbeLGB6lr0?si=Mp2B_kK2e0RmFMiv" title="Media 2" frameBorder="0" allowFullScreen></iframe>
+            <iframe width="360" height="215" src="https://www.youtube.com/embed/qqZKZWnWlv0?si=XZ4hT9mtz-xl4ZIs" title="Media 3" frameBorder="0" allowFullScreen></iframe>
+          </div>
+          <div style={{ textAlign: 'center', marginTop: 16 }}>
+            <button className="campus-gallery-btn">Load More Media</button>
+          </div>
+        </div>
+
+        {/* Events at MRUH */}
+        <div className="campus-section-block">
+          <h3 className="campus-section-title">EVENTS AT MRUH</h3>
+          <div className="campus-videos-row">
+            <iframe width="360" height="215" src="https://www.youtube.com/embed/IavWWjlUG5k?si=KKH_L5DvY1LcaLoK" title="Event 1" frameBorder="0" allowFullScreen></iframe>
+            <iframe width="360" height="215" src="https://www.youtube.com/embed/lRRXz6LAxjo?si=honAcdlseSbvWkNo" title="Event 2" frameBorder="0" allowFullScreen></iframe>
+            <iframe width="360" height="215" src="https://www.youtube.com/embed/IttuDOPIojA?si=BQYrjsCws7xoLGpS" title="Event 3" frameBorder="0" allowFullScreen></iframe>
+          </div>
+        </div>
         {/* Hero Image */}
         <div className="campus-hero-img-wrap">
           <img
@@ -116,7 +134,7 @@ const CampusLife = () => {
         <div className="campus-highlights-wrap">
           <div>
             <div style={{ margin: '2rem 0', fontSize: '1.15rem', color: '#374151', maxWidth: 500 }}>
-              Mahindra University offers a vibrant and inclusive campus experience, where students from diverse backgrounds come together to learn, innovate, and grow. From world-class facilities and active student clubs to cultural festivals and sports, our campus is designed to inspire excellence and lifelong friendships.
+              Mallareddy University offers a vibrant and inclusive campus experience, where students from diverse backgrounds come together to learn, innovate, and grow. From world-class facilities and active student clubs to cultural festivals and sports, our campus is designed to inspire excellence and lifelong friendships.
             </div>
           </div>
           <div className="campus-highlights-img-wrap">

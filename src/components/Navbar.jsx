@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, GraduationCap } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import '../css/NavbarModern.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,88 +19,88 @@ const Navbar = () => {
 
   const navItems = [
     { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
+    // About: scroll to #about-mru on home page
+    { name: 'About', href: '/about-us' },
     { name: 'Academics', href: '#academics' },
     { name: 'Admissions', href: '/admissions', isRoute: true },
-    { name: 'Faculty', href: '#faculty' },
     { name: 'Research', href: '#research' },
     { name: 'Campus Life', href: '#campus-life' },
-    { name: 'News', href: '#news' },
+    { name: 'Downloads', href: '/downloads' },
     { name: 'Contact', href: '#contact' },
   ];
 
   // Role-based dashboard links
   const dashboardLinks = [];
-  if (role === 'ADMIN') dashboardLinks.push(<li key="admin"><a href="/admin/dashboard" className="hover:text-black font-semibold">Admin Dashboard</a></li>);
-  if (role === 'HOD') dashboardLinks.push(<li key="hod"><a href="/hod/dashboard" className="hover:text-cyan-600 font-semibold">HOD Dashboard</a></li>);
-  // Removed Faculty Dashboard link
-  if (role === 'STUDENT') dashboardLinks.push(<li key="student"><a href="/student/dashboard" className="hover:text-blue-600 font-semibold">Student Dashboard</a></li>);
+  if (role === 'ADMIN') dashboardLinks.push(<li key="admin"><a href="/admin/dashboard" className="navbar-dashboard-link">Admin Dashboard</a></li>);
+  if (role === 'HOD') dashboardLinks.push(<li key="hod"><a href="/hod/dashboard" className="navbar-dashboard-link">HOD Dashboard</a></li>);
+  if (role === 'STUDENT') dashboardLinks.push(<li key="student"><a href="/student/dashboard" className="navbar-dashboard-link">Student Dashboard</a></li>);
 
   const isLoggedIn = !!localStorage.getItem('token');
 
   return (
-    <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : 'navbar-default'}`}>
-      <div className="navbar-container">
-        <div className="navbar-flex">
-        <div className="navbar-logo-wrap">
-          <img src="/Mahindra-University-Logo.svg" alt="Mahindra University Logo" className="navbar-logo-icon" style={{ height: '2.5rem', width: 'auto' }} />
-        </div>
-
-          {/* Desktop Navigation */}
-          <div className="navbar-links">
-  <div className="navbar-nav-items">
-    {navItems.map((item) => (
-      item.isRoute ? (
-        <Link key={item.name} to={item.href} className="navbar-link">
-          {item.name}
-        </Link>
-      ) : (
-        <a key={item.name} href={item.href} className="navbar-link">
-          {item.name}
-        </a>
-      )
-    ))}
-    {dashboardLinks}
-  </div>
-  <div className="navbar-auth-buttons">
-    {!isLoggedIn && <a href="/login" className="navbar-btn signin">Sign In</a>}
-    {!isLoggedIn && <a href="/register" className="navbar-btn register">Register</a>}
-    {/* Removed logout button */}
-  </div>
-</div>
-          
+    <nav className={`navbar-modern ${isScrolled ? 'navbar-scrolled' : ''}`}> 
+      <div className="w-full overflow-hidden">
+        <div className="flex flex-nowrap justify-between items-center min-h-[96px] w-full px-8 py-4">
+          {/* Left: Logo */}
+          <div className="flex items-center flex-shrink-0 pr-8">
+            <img src="/MRU-Logo2.png" alt="Malla Reddy University Logo" className="h-16 w-auto object-contain block" style={{flexShrink:0}} />
+          </div>
+          {/* Center: Nav Items */}
+          <div className="flex-1 flex justify-center items-center min-w-0">
+            <ul className="flex flex-nowrap items-center gap-8 whitespace-nowrap m-0 p-0 list-none">
+              {navItems.map((item) =>
+                item.isRoute ? (
+                  <li key={item.name}>
+                    <Link to={item.href} className="navbar-modern-link">{item.name}</Link>
+                  </li>
+                ) : (
+                  <li key={item.name}>
+                    <a href={item.href} className="navbar-modern-link">{item.name}</a>
+                  </li>
+                )
+              )}
+              {dashboardLinks}
+            </ul>
+            <div className="navbar-modern-auth-buttons ml-6">
+              {!isLoggedIn && <a href="/login" className="navbar-modern-btn signin">Sign In</a>}
+              {!isLoggedIn && <a href="/register" className="navbar-modern-btn register">Register</a>}
+            </div>
+          </div>
+          {/* Right: CTA Button */}
+          <div className="flex items-center flex-shrink-0 pl-6">
+            <Link to="/admissions" className="navbar-modern-apply-btn whitespace-nowrap">APPLY NOW</Link>
+          </div>
           {/* Mobile menu button */}
-          <div className="navbar-mobile-btn-wrap">
+          <div className="navbar-modern-mobile-btn-wrap ml-4">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="navbar-mobile-btn"
+              className="navbar-modern-mobile-btn"
+              style={{ background: 'none', border: 'none', color: '#fff' }}
             >
-              {isOpen ? <X className="navbar-mobile-icon" /> : <Menu className="navbar-mobile-icon" />}
+              {isOpen ? <X className="navbar-modern-mobile-icon" /> : <Menu className="navbar-modern-mobile-icon" />}
             </button>
           </div>
         </div>
-
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="navbar-mobile-menu">
-            <div className="navbar-mobile-links">
+          <div className="navbar-modern-mobile-menu">
+            <div className="navbar-modern-mobile-links">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="navbar-mobile-link"
+                  className="navbar-modern-mobile-link"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
                 </a>
               ))}
               {dashboardLinks}
-              <div className="navbar-mobile-auth-buttons">
-  {!isLoggedIn && <a href="/login" className="navbar-btn signin">Sign In</a>}
-  {!isLoggedIn && <a href="/register" className="navbar-btn register">Register</a>}
-  {/* Removed logout button */}
-</div>
-
+              <div className="navbar-modern-mobile-auth-buttons">
+                {!isLoggedIn && <a href="/login" className="navbar-modern-btn signin">Sign In</a>}
+                {!isLoggedIn && <a href="/register" className="navbar-modern-btn register">Register</a>}
+              </div>
+              <Link to="/admissions" className="navbar-modern-apply-btn mt-4">APPLY NOW</Link>
             </div>
           </div>
         )}

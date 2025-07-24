@@ -1,197 +1,78 @@
 import React from 'react';
 import { GraduationCap, Facebook, Twitter, Instagram, Linkedin as LinkedIn, Youtube, Mail, Phone, MapPin } from 'lucide-react';
+import '../css/Footer.css';
 
 const Footer = () => {
-  const academicLinks = [
-    'Undergraduate Programs',
-    'Graduate Programs',
-    'Online Learning',
-    'Continuing Education',
-    'Academic Calendar',
-    'Course Catalog'
-  ];
-
-  const studentLinks = [
-    'Student Portal',
-    'Library Services',
-    'Career Services',
-    'Campus Housing',
-    'Student Organizations',
-    'Health Services'
-  ];
-
-  const aboutLinks = [
-    'University History',
-    'Leadership',
-    'Mission & Vision',
-    'Accreditation',
-    'Campus Map',
-    'News & Events'
-  ];
-
-  const quickLinks = [
-    'Apply Now',
-    'Visit Campus',
-    'Financial Aid',
-    'International Students',
-    'Alumni',
-    'Employment'
-  ];
-
-  const socialLinks = [
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: LinkedIn, href: '#', label: 'LinkedIn' },
-    { icon: Youtube, href: '#', label: 'YouTube' }
-  ];
-
   return (
-    <footer className="footer">
-      {/* Main Footer Content */}
-      <div className="footer-main">
-        <div className="footer-grid">
+    <footer className="mru-footer">
+      <div className="mru-footer-main">
+        <div className="mru-footer-grid">
           {/* University Info */}
-          <div className="footer-info">
-            <div className="footer-logo-wrap">
-              <GraduationCap className="footer-logo-icon" />
-              <span className="footer-logo-text">Mahindra University</span>
-            </div>
-            <p className="footer-desc">
-              Empowering minds, inspiring innovation, and shaping the leaders of tomorrow. 
-              Join our community of scholars and discover your potential.
-            </p>
-            <div className="footer-contact-list">
-              <div className="footer-contact-item">
-                <MapPin className="footer-contact-icon" />
-                <span>Survey No: 62/1A, Bahadurpally, Jeedimetla, Hyderabad, Telangana 500043</span>
-              </div>
-              <div className="footer-contact-item">
-                <Phone className="footer-contact-icon" />
-                <span>040 67135100, +919618592999, +919100938473</span>
-              </div>
-              <div className="footer-contact-item">
-                <Mail className="footer-contact-icon" />
-                <span>admissions@mahindrauniversity.edu.in</span>
-              </div>
+          <div className="mru-footer-info">
+            <img src="/mru_logo.png" alt="Malla Reddy University Logo" className="mru-footer-logo" />
+            <div className="mru-footer-address">
+              <div><b>MALLA REDDY UNIVERSITY</b></div>
+              <div>(As per Telangana State Private Universities<br/>Act No.13 of 2020 and G.O.Ms.No.14, Higher<br/>Education (UE) Department)</div>
+              <div>Maisammaguda, Dulapally,<br/>Hyderabad, Telangana 500100</div>
+              <div>Phone: 94971-94971, 91778-78365</div>
+              <div>info@mallareddyuniversity.ac.in<br/>admissions@mallareddyuniversity.ac.in</div>
             </div>
           </div>
-
-          {/* Academics */}
-          <div className="footer-col">
-            <h3 className="footer-col-title">Academics</h3>
-            <ul className="footer-col-list">
-              {academicLinks.map((link, index) => (
-                <li key={index}>
-                  <a href="#" className="footer-link">
-                    {link}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Student Life */}
-          <div className="footer-col">
-            <h3 className="footer-col-title">Student Life</h3>
-            <ul className="footer-col-list">
-              {studentLinks.map((link, index) => (
-                <li key={index}>
-                  <a href="#" className="footer-link">
-                    {link}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           {/* About */}
-          <div className="footer-col">
-            <h3 className="footer-col-title">About</h3>
-            <ul className="footer-col-list">
-              {aboutLinks.map((link, index) => (
-                <li key={index}>
-                  <a href="#" className="footer-link">
-                    {link}
-                  </a>
-                </li>
-              ))}
+          <div className="mru-footer-col">
+            <div className="mru-footer-col-title">ABOUT</div>
+            <ul className="mru-footer-col-list">
+              <li>Home</li>
+              <li>University</li>
+              <li>Management</li>
+              <li>Advisory Body</li>
+              <li>MRGI</li>
+              <li>Statutory Authorities</li>
+              <li>Statutory Bodies</li>
+              <li>Evaluations</li>
+              <li>Placements</li>
             </ul>
           </div>
-
+          {/* Campus Life */}
+          <div className="mru-footer-col">
+            <div className="mru-footer-col-title">CAMPUS LIFE</div>
+            <ul className="mru-footer-col-list">
+              <li>Hostel</li>
+              <li>Knowledge Resource Centre</li>
+              <li>Cafeteria</li>
+              <li>Laboratories</li>
+              <li>Sports</li>
+              <li>Transport</li>
+            </ul>
+          </div>
           {/* Quick Links */}
-          <div className="footer-col">
-            <h3 className="footer-col-title">Quick Links</h3>
-            <ul className="footer-col-list">
-              {quickLinks.map((link, index) => (
-                <li key={index}>
-                  <a href="#" className="footer-link">
-                    {link}
-                  </a>
-                </li>
-              ))}
+          <div className="mru-footer-col">
+            <div className="mru-footer-col-title">QUICK LINKS</div>
+            <ul className="mru-footer-col-list">
+              <li>UGC Application</li>
+              <li>Conferences</li>
+              <li>MOU's and Collaborations</li>
+              <li>Contact Us</li>
+              <li>Student Corner</li>
+              <li>Quality Assurance</li>
             </ul>
           </div>
-        </div>
-
-        {/* Newsletter Signup */}
-        <div className="footer-newsletter">
-          <div className="footer-newsletter-content">
-            <h3 className="footer-newsletter-title">Stay Connected</h3>
-            <p className="footer-newsletter-desc">
-              Subscribe to our newsletter for the latest news, events, and updates from Mahindra University.
-            </p>
-          </div>
-          <div className="footer-newsletter-form">
-            <input
-              type="email"
-              placeholder="Enter your email address"
-              className="footer-newsletter-input"
-            />
-            <button className="footer-newsletter-btn">
-              Subscribe
-            </button>
-          </div>
-        </div>
-
-        {/* Social Media */}
-        <div className="footer-social">
-          <div className="footer-social-list">
-            <h3 className="footer-social-title">Follow Us</h3>
-            <div className="footer-social-icons">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  className="footer-social-link"
-                  aria-label={social.label}
-                >
-                  <social.icon className="footer-social-icon" />
-                </a>
-              ))}
-            </div>
-          </div>
-          <div className="footer-social-info">
-            <p className="footer-social-accredit">Accredited by the Higher Learning Commission</p>
-            <div className="footer-social-links">
-              <a href="#" className="footer-link">Privacy Policy</a>
-              <a href="#" className="footer-link">Terms of Use</a>
-              <a href="#" className="footer-link">Accessibility</a>
-              <a href="#" className="footer-link">Title IX</a>
-            </div>
+          {/* Academics */}
+          <div className="mru-footer-col">
+            <div className="mru-footer-col-title">ACADEMICS</div>
+            <ul className="mru-footer-col-list">
+              <li>School of Engineering</li>
+              <li>School of Agriculture</li>
+              <li>School of Allied Healthcare Sciences</li>
+              <li>School of Management / Commerce</li>
+              <li>School of Sciences</li>
+            </ul>
           </div>
         </div>
       </div>
-
-      {/* Bottom Footer */}
-      <div className="footer-bottom">
-        <div className="footer-bottom-content">
-          <div>
-            © 2024 Mahindra University. All rights reserved.
-          </div>
-          <div className="footer-bottom-equal">
-            An equal opportunity/affirmative action institution.
-          </div>
+      <div className="mru-footer-bottom">
+        <div className="mru-footer-bottom-content">
+          <div>© Copyright 2025 by Malla Reddy University. All Rights Reserved.</div>
         </div>
       </div>
     </footer>

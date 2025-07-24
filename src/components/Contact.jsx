@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Phone, Mail, MapPin, Clock, MessageSquare, Users } from 'lucide-react';
 
 const Contact = () => {
+  const formRef = useRef();
+
   const contactInfo = [
     {
       icon: Phone,
@@ -11,12 +13,12 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      details: ['admissions@mahindrauniversity.edu.in']
+      details: ['info@mallareddyuniversity.ac.in']
     },
     {
       icon: MapPin,
       title: 'Address',
-      details: ['Survey No: 62/1A, Bahadurpally, Jeedimetla, Hyderabad, Telangana 500043']
+      details: ['Maisammaguda, Dulapally, Hyderabad, Telangana 500100']
     },
     {
       icon: Clock,
@@ -53,16 +55,32 @@ const Contact = () => {
     {
       name: 'Executive Education',
       phone: '9059538001',
-      email: 'executive.education@mahindrauniversity.edu.in',
+      email: 'executive.education@mallareddyuniversity.ac.in',
       hours: ''
     },
     {
       name: 'MBA',
       phone: '9963427036 / 9963476964',
-      email: 'mba.admissions@mahindrauniversity.edu.in',
+        email: 'mba.admissions@mallareddyuniversity.ac.in',
       hours: ''
     }
   ];
+
+  // Add mailto handler
+  const handleMailtoSubmit = (e) => {
+    e.preventDefault();
+    const form = formRef.current;
+    const firstName = form["firstName"].value;
+    const lastName = form["lastName"].value;
+    const email = form["email"].value;
+    const phone = form["phone"].value;
+    const subject = form["subject"].value;
+    const message = form["message"].value;
+    const mailto = `mailto:sudhakarkatam77@gmail.com?subject=${encodeURIComponent(subject + ' from ' + firstName + ' ' + lastName)}&body=${encodeURIComponent(
+      `Name: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`
+    )}`;
+    window.location.href = mailto;
+  };
 
   return (
     <section id="contact" className="contact-section">
@@ -77,6 +95,16 @@ const Contact = () => {
           </p>
         </div>
 
+        {/* Location and Legal Note */}
+        <div className="contact-location-note" style={{textAlign: 'center', marginBottom: '2rem'}}>
+          <div style={{fontWeight: 'bold', fontSize: '1.1rem'}}>Location</div>
+          <img src="/MRU-Logo2.png" alt="MRU Logo" style={{maxWidth: '120px', margin: '0.5rem auto'}} />
+          <div style={{fontSize: '0.95rem', marginTop: '0.5rem'}}>
+            (As per Telangana State Private Universities Act No.13 of 2020 and <br />
+            G.O.Ms.No.14, Higher Education (UE) Department)
+          </div>
+        </div>
+
         <div className="contact-grid">
           {/* Contact Form */}
           <div className="contact-form-wrap">
@@ -86,7 +114,7 @@ const Contact = () => {
                 <h3 className="contact-form-title">Send us a Message</h3>
               </div>
               
-              <form className="contact-form">
+              <form className="contact-form" ref={formRef} onSubmit={handleMailtoSubmit}>
                 <div className="contact-form-row">
                   <div>
                     <label htmlFor="firstName" className="contact-label">
@@ -95,6 +123,7 @@ const Contact = () => {
                     <input
                       type="text"
                       id="firstName"
+                      name="firstName"
                       className="contact-input"
                       required
                     />
@@ -106,6 +135,7 @@ const Contact = () => {
                     <input
                       type="text"
                       id="lastName"
+                      name="lastName"
                       className="contact-input"
                       required
                     />
@@ -119,6 +149,7 @@ const Contact = () => {
                   <input
                     type="email"
                     id="email"
+                    name="email"
                     className="contact-input"
                     required
                   />
@@ -131,6 +162,7 @@ const Contact = () => {
                   <input
                     type="tel"
                     id="phone"
+                    name="phone"
                     className="contact-input"
                   />
                 </div>
@@ -141,6 +173,7 @@ const Contact = () => {
                   </label>
                   <select
                     id="subject"
+                    name="subject"
                     className="contact-input"
                     required
                   >
@@ -160,6 +193,7 @@ const Contact = () => {
                   </label>
                   <textarea
                     id="message"
+                    name="message"
                     rows={6}
                     className="contact-input contact-textarea"
                     placeholder="Please provide details about your inquiry..."

@@ -1,0 +1,29 @@
+.image-slider-container {
+  background: #fff8e1; /* Remove or change as needed */
+}
+
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #f97316; /* Tailwind orange-500 */
+  color: #fff;
+  font-size: 2rem;
+  border-radius: 9999px;
+  padding: 1rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  border: 4px solid #fff;
+  z-index: 50;
+  transition: background 0.2s, box-shadow 0.2s;
+  outline: none;
+  cursor: pointer;
+}
+.slider-arrow:hover {
+  background: #ea580c; /* Tailwind orange-600 */
+}
+.slider-arrow-left {
+  left: 1.25rem; /* left-5 */
+}
+.slider-arrow-right {
+  right: 1.25rem; /* right-5 */
+} 
